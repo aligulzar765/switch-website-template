@@ -1,23 +1,3 @@
-$(document).ready(function(){
-$('.owl-carousel').owlCarousel({
-	    loop:true,
-        margin:30,
-        nav:true,
-        autoplay:true,
-        autoplayTimeout:4000,
-        responsive:{
-            0:{
-                 items:1
-              },
-          600:{
-                 items:1
-              },
-         1000:{
-       	         items:1
-              }
-            }
-        });
-});
 $(document).ready(function() {
     $("#scroll-down").click(function() {
          $('html, body').animate({
@@ -30,6 +10,7 @@ $(document).ready(function() {
 
 
 // init Isotope
+$(document).ready(function() {
 var $grid = $('.grid').isotope({
     itemSelector: '.element-item',
     layoutMode: 'fitRows',
@@ -76,4 +57,5 @@ var $grid = $('.grid').isotope({
       $buttonGroup.find('.is-checked').removeClass('is-checked');
       $( this ).addClass('is-checked');
     });
-  });    
+  });
+});    

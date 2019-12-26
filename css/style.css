@@ -13,7 +13,7 @@ header{
     width:100%;
     z-index: 1;
 }
-header.container-xl{
+header .container-xl{
     position: relative;
 }
 .nav{
@@ -48,11 +48,14 @@ header.container-xl{
     background-color: #54d154;
     color:white;
 }
+
 .logo-brand{
     width: 62px;
     display: block;
-    float: left;
+    position: absolute;
+    left:15px;
     padding:9px 0;
+    z-index: 2;
 }
 .logo-brand a{
     display:block;
@@ -94,19 +97,17 @@ header.container-xl{
     color:white;
     position: relative;
 }
-
-.banner .banner-header{
-    max-width:750px;
-    padding:190px 0;
-    margin:0 auto;
+.banner .row{
+    min-height: 590px;
 }
+
 .banner-header .button{
     font-size:22px;
 }
 .banner .banner-footer{
     position: absolute;
-    bottom:10px;
-    left:calc(50% - 65px);
+    bottom: 12px;
+    left: calc(50% - 65px);
 }
 .banner h1{
     font-size:55px;
@@ -165,6 +166,7 @@ header.container-xl{
     color:#54d154;
     border:1px solid #388b38;
     float: left;
+    outline:none;
 }
 .button-group>.button:not(:last-child){
     border-top-right-radius: 0;
@@ -206,7 +208,7 @@ header.container-xl{
     text-align: center;
   }
 .head{
-    margin:0 0 10px;
+    margin:0 0 12px;
 }
 .head h2{
     font-size:21px;
@@ -222,13 +224,16 @@ header.container-xl{
     bottom:0;
     left:calc(50% - 30px);
 }
-.head .description p{
+.head p{
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     margin:0;
 }
+.services{
+    padding:40px 0 0;
+}
 .services article{
-    padding:10px 0;
+    padding:12px 0 22px;
 }
 .services .article-content{
     padding:0 15px;
@@ -240,24 +245,36 @@ header.container-xl{
 .services article figure .img-fluid{
     height: 74px;
 }
-.services article figure a{
+.services article figure .icon-holder{
     display:inline-block;
-    padding:30px 25px;
+    padding:34px;
     background-color: #e1f3e1;
     border-radius: 30px;
+}
+.icon-holder .fa{
+    font-size:74px;
+    color:#54d154;
 }
 .services .article-content p{
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
 }
+
 .our-work .container-xl{
     background-color: #54d154;
-    padding-bottom: 15px;
+    padding:40px 0 0;
+}
+.testimonial{
+    padding:40px 0 0;
 }
 .testimonial .customer-message{
     max-width:600px;
     margin:0 auto;
     overflow: hidden;
+    font-weight: bold;
+}
+.carousel-inner{
+    padding:60px 0 0;
 }
 .customer{
     overflow:hidden;
@@ -283,14 +300,30 @@ float: left;
     overflow:hidden;
     border:1px solid rgb(90, 90, 90);
   }
-.owl-carousel .owl-item img {
+.customer-pic a img {
     width:42px;
   }
+#slider .fa{
+      color:grey;
+      font-size:24px;
+}
+
+.clients{
+    padding: 60px 0 0;
+}
 .clients .container-xl{
     background-color: #f2f1f1;
+    padding:35px 0 0;
+}
+.clients .client-footer{
+    padding:60px 0;
+}
+.clients .row [class*="col"]{
+    padding-top:40px;
 }
 .team .container-xl{
     background-color: #54d154;
+    padding-top: 40px;
 }
 .team .member-head a{
     display: inline-block;
@@ -360,7 +393,7 @@ footer .section-head h4::after{
     line-height: 20px;
     color: white;
 }
-.fa:hover {
+.social-icons li .fa:hover {
     opacity: 0.7;
 }
 .fa-dribbble {
@@ -381,6 +414,9 @@ footer .post .img-holder{
     float:left;
     margin:0 5px 0 0;
 }
+footer .post .post-title{
+    float: left;
+}
 .badge-warning{
     color:white;
 }
@@ -388,8 +424,18 @@ footer form{
     border-radius: 5px;
     overflow: hidden;
 }
-footer address{
+footer .contact-us .section-head{
+    padding-bottom: 20px;
+}
+footer .address{
     font-size:14px;
+    display:block;
+}
+footer .address a{
+    color:white;
+}
+footer .address a:hover{
+    color:rgb(197, 194, 194);
 }
 footer .form-group{
     margin:0 0 3px;
@@ -398,10 +444,12 @@ footer .form-control{
     border:none;
     border-radius: 0;
     background-color: #444444;
+    color:white;
 }
 footer .form-control:focus{
     background-color: #444444;
     box-shadow: none;
+    color:white;
 }
 footer form .btn{
     width:100%;
@@ -430,6 +478,7 @@ footer .copyright p{
 @media (min-width:576px){
     .element-item{
       width:25%;
+      height: auto;
     }
     .gallery a img{
       display:block;
@@ -439,17 +488,16 @@ footer .copyright p{
   @media (min-width:768px) {
     .element-item{
       width:20%;
+      height: auto;
     }
-    .banner .banner-header{
-        padding:260px 0;
-        margin:0 auto;
+    .banner .row{
+        min-height: 660px;
     }
     
   }
   @media (min-width:992px){
     .logo-brand{
-        margin:0 auto;
-        float:none;
+        left:calc(50% - 31px);
     }
     .header-form{
         margin:0;
@@ -458,9 +506,9 @@ footer .copyright p{
         display: none;
     }
       .nav{
-          position: static;
+        position: static;
         float:left;
-          padding:0;
+        padding:0;
       }
       .navigation li{
         float:left;
@@ -471,7 +519,12 @@ footer .copyright p{
         border-top:4px solid transparent;
         padding:5px;
     }
-    .navigation a:hover{
+    .navigation li .active{
+        color:white;
+        background-color: transparent;
+        border-top:4px solid #54d154 ;
+    }
+    .navigation a:hover:not(.active){
         text-decoration: none;
         color:white;
         background-color: transparent;
